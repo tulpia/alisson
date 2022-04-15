@@ -1,0 +1,19 @@
+.title {
+    @include ft_heading();
+
+    &--white {
+        color: $c_sub;
+    }
+}
+
+.text {
+    @include ft_txt();
+
+    &--small {
+        @include ft_txt_sm();
+    }
+
+    &--white {
+        color: $c_sub;
+    }
+}

@@ -1,0 +1,23 @@
+header {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    nav {
+        a {
+            text-transform: lowercase;
+            text-decoration: none;
+
+            &:not(:first-child) {
+                margin-left: 55px;
+            }
+
+            &.is-active {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+<nav>
+    {% for item in data.menus.menu_principal.items %}
+        <a href="{{ item.link }}" class="text text--small{% if item.current %} is-active{% endif %}">.{{ item.title }}</a>
+    {% endfor %}
+</nav>

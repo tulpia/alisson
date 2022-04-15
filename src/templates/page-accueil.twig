@@ -1,0 +1,10 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <section data-router-view="home">
+        <section class="page-accueil__landing">
+            <h1 class="title">{{ data.fields.main_text }}</h1>
+            <span class="text text--small landing__time">{{ "now"|date("d/m/Y H:i:s") }}</span>
+        </section>
+    </section>
+{% endblock %}

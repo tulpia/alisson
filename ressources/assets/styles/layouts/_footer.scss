@@ -1,0 +1,36 @@
+footer {
+    padding-bottom: 295px;
+    position: relative;
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 542px 368px auto;
+
+        a {
+            display: block;
+        }
+    }
+
+    .footer__first-part {
+        margin-bottom: 110px;
+    }
+
+    .content__title {
+        opacity: .25;
+    }
+
+    .footer-end-text {
+        position: absolute;
+        bottom: -325px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: $f_txt;
+        color: $c_main;
+        line-height: 1;
+        font-weight: 600;
+        font-size: 450px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+}
