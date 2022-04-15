@@ -1,4 +1,14 @@
+body {
+    overflow-x: hidden;
+    background: $c_sub;
+}
+
 .wrapper {
-    width: 1660px;
+    width: 1740px;
+    margin: 0 auto;
+}
+
+.wrapper-small {
+    width: 1570px;
     margin: 0 auto;
 }

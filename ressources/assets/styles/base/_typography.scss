@@ -9,6 +9,10 @@
 .text {
     @include ft_txt();
 
+    strong {
+        font-weight: 600;
+    }
+
     &--small {
         @include ft_txt_sm();
     }

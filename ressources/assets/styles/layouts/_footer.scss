@@ -1,6 +1,7 @@
 footer {
     padding-bottom: 295px;
     position: relative;
+    overflow: hidden;
 
     .footer-grid {
         display: grid;
@@ -19,18 +20,19 @@ footer {
         opacity: .25;
     }
 
-    .footer-end-text {
+    .footer-end-text__container {
         position: absolute;
-        bottom: -325px;
+        bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
-        font-family: $f_txt;
-        color: $c_main;
-        line-height: 1;
-        font-weight: 600;
-        font-size: 450px;
-        margin: 0;
-        padding: 0;
-        text-align: center;
+
+        p {
+            text-align: center;
+            font-family: $f_txt;
+            color: $c_main;
+            line-height: 1;
+            font-weight: 600;
+            font-size: 450px;
+        }
     }
 }

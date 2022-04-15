@@ -5,6 +5,7 @@ header {
     top: 60px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 9999;
 
     nav {
         a {

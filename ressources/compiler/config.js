@@ -7,7 +7,10 @@ module.exports = {
     devtool: 'cheap-module-eval-source-map',
     outputFolder: '../assets',
     publicFolder: 'assets',
-    proxyTarget: 'http://ben.local',
+    proxyTarget: 'http://alisson.com',
+    host: 'alisson.com',
+    proxy: 'alisson.com', // or project.dev/app/
+    port: 3000,
     watch: [
       '../**/*.php'
     ]
