@@ -1,0 +1,68 @@
+[data-router-view="about"] {
+    .page-about__landing {
+        h1 {
+            .underline {
+                position: relative;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 30px;
+                    left: 0;
+                    height: 2px;
+                    width: 100%;
+                    background: $c_main;
+
+                    body.dark & {
+                        background: $c_sub;
+                    }
+                }
+            }
+        }
+    }
+
+    .page-about__experience {
+        margin-top: 300px;
+        margin-bottom: 300px;
+
+        >h2 {
+            @include ft_heading();
+
+            font-size: 62px;
+            line-height: 70px;
+
+            body.dark & {
+                color: $c_sub;
+            }
+        }
+
+        .experiences {
+            margin-top: 80px;
+
+            &__header,
+            .list__experience {
+                display: grid;
+                grid-template-columns: 24% 24% 20% 32%;
+            }
+
+            &__header {
+                opacity: .25;
+            }
+
+            &__list {
+                li {
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+
+                    &:not(:last-child) {
+                        border-bottom: 1px solid $c_main;
+
+                        body.dark & {
+                            border-color: $c_sub;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

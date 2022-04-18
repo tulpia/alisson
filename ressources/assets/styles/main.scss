@@ -2,6 +2,7 @@
 @import "./base/_reset.scss";
 @import "./base/_fonts.scss";
 @import "./base/_vars.scss";
+@import "./base/_mixins.scss";
 @import "./base/_typography.scss";
 
 // ----------- LAYOUTS
@@ -11,5 +12,6 @@
 
 // ----------- PAGES
 @import "./pages/_page-accueil.scss";
+@import "./pages/_page-about.scss";
 
 // ----------- BLOC

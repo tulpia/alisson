@@ -2,6 +2,29 @@
 
 {% block content %}
     <section data-router-view="about">
-        <div>about</div>
+        <section class="page-about__landing">
+            <h1 class="title">{{ data.fields.main_text|convert_to_underline }}</h1>
+        </section>
+        <section class="wrapper-small page-about__experience">
+            <h2>Professional<br />experience</h2>
+            <div class="experiences">
+                <div class="experiences__header">
+                    <span class="text experience--role">Role</span>
+                    <span class="text experience--entreprise">Entreprise</span>
+                    <span class="text experience--period">Period</span>
+                    <span class="text experience--description">Description</span>
+                </div>
+                <ul class="experiences__list">
+                    {% for experience in data.fields.experience %}
+                        <li class="list__experience">
+                            <span class="text experience--role">{{ experience.role }}</span>
+                            <span class="text experience--entreprise">{{ experience.entreprise }}</span>
+                            <span class="text experience--period">{{ experience.period }}</span>
+                            <div class="text experience--description">{{ experience.description }}</div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
     </section>
 {% endblock %}

@@ -12,31 +12,5 @@ $bp_tablet: 1024px;
 $bp_tablet_sm: 800px;
 $bp_mobile: 420px;
 
-// FONT STYLES
-@mixin ft_heading() {
-    font-family: $f_title, serif;
-    font-size: 140px;
-    line-height: 130px;
-    font-weight: 400;
-    color: #484743;
-}
-
-@mixin ft_txt() {
-    font-family: $f_txt, sans-serif;
-    font-size: 24px;
-    line-height: 36px;
-    color: #484743;
-    font-weight: 400;
-}
-
-@mixin ft_txt_sm() {
-    font-family: $f_txt, sans-serif;
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 400;
-    color: #484743;
-}
-
-
 // ----------- MISC
 $cubic_bezier: cubic-bezier(.8, 0, .19, 1);

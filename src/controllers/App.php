@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Utils\TwigFilters;
 use Timber\Timber;
 
 class App
@@ -11,6 +12,7 @@ class App
     public function __construct()
     {
         $this->loadTimber();
+        $this->loadUtils();
 
         add_action("wp_enqueue_scripts", [$this, "includeAssets"]);
         add_action('admin_menu', [$this, "removeMenuPages"]);
@@ -33,9 +35,14 @@ class App
         $timber = new Timber();
     }
 
+    public function loadUtils()
+    {
+        TwigFilters::getInstance();
+    }
+
     public function includeAssets()
     {
-        wp_enqueue_style('site_main_css', get_template_directory_uri() . '/assets/styles/main.css', array(), '1.0', false);
+        wp_enqueue_style("site_main_css", get_template_directory_uri() . '/assets/styles/main.css', array(), '1.0', false);
         wp_enqueue_script('site_main_js', get_template_directory_uri() . '/assets/scripts/main.js', array(), '1.0', true);
     }
 

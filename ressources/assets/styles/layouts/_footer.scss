@@ -33,6 +33,10 @@ footer {
             line-height: 1;
             font-weight: 600;
             font-size: 450px;
+
+            body.dark & {
+                color: $c_sub;
+            }
         }
     }
 }

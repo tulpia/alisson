@@ -1,6 +1,15 @@
 body {
     overflow-x: hidden;
     background: $c_sub;
+
+    &.dark {
+        background: $c_main;
+
+        .text,
+        .title {
+            color: $c_sub;
+        }
+    }
 }
 
 .wrapper {
@@ -11,4 +20,8 @@ body {
 .wrapper-small {
     width: 1570px;
     margin: 0 auto;
+}
+
+main {
+    margin-top: 60px !important;
 }
