@@ -1,0 +1,23 @@
+[data-router-view="contact"] {
+    height: calc(100vh + 10px);
+
+    .page-contact__content {
+        margin-top: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        div {
+            width: 43.5%;
+
+            &:first-child {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            a {
+                font-size: 42px;
+            }
+        }
+    }
+}
