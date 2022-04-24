@@ -4,6 +4,7 @@
 @import "./base/_vars.scss";
 @import "./base/_mixins.scss";
 @import "./base/_typography.scss";
+@import "./base/_locomotive.scss";
 
 // ----------- LAYOUTS
 @import "./layouts/_page.scss";
@@ -14,5 +15,6 @@
 @import "./pages/_page-accueil.scss";
 @import "./pages/_page-about.scss";
 @import "./pages/_page-contact.scss";
+@import "./pages/_page-works.scss";
 
 // ----------- BLOC

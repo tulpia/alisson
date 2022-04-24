@@ -1,5 +1,6 @@
 // Dependencies
 import Highway from "@dogstudio/highway";
+import LocomotiveScroll from 'locomotive-scroll';
 
 // Renderers
 import AccueilRenderer from "./renderers/AccueilRenderer";
@@ -22,4 +23,22 @@ const H = new Highway.Core({
     transitions: {
         default: DefaultTransition
     }
+});
+
+let scroll;
+
+document.addEventListener("DOMContentLoaded", function() {
+    scroll = new LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]"),
+        smooth: true,
+        inertia: 0.5
+    });
+});
+
+H.on("NAVIGATE_OUT", () => {
+    scroll.scrollTo(".page");
+});
+  
+H.on("NAVIGATE_END", () => {
+    scroll.update();
 });

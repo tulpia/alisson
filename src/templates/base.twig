@@ -15,17 +15,17 @@
         {% endblock %}
     </header>
 
-    <main class="wrapper" data-router-wrapper>
+    <main class="wrapper" data-scroll-container>
         {% block content %}
             content goes here
         {% endblock %}
-    </main>
 
-    <footer class="wrapper-small">
-        {% block footer %}
-            {% include "partial/footer.twig" %}
-        {% endblock %}
-    </footer>
+        <footer data-scroll-section class="wrapper-small">
+            {% block footer %}
+                {% include "partial/footer.twig" %}
+            {% endblock %}
+        </footer>
+    </main>
 
     {{ function('wp_footer') }}
 </body>

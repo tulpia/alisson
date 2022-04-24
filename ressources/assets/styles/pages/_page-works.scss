@@ -1,0 +1,15 @@
+[data-router-view="works"] {
+    margin-bottom: 420px;
+
+    .page-works__works-listing {
+        .works-listing__work {
+            display: block;
+
+            .work__image-container {
+                img {
+                    display: none;
+                }
+            }
+        }
+    }
+}

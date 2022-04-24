@@ -1,7 +1,20 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <section data-router-view="works">
-        <div>works</div>
+    <section data-scroll-section data-router-view="works">
+        <section class="wrapper page-works__works-listing">
+            {% for work in data.works %}
+                <a class="works-listing__work">
+                    <h1 class="title">{{ work.post_title }}</h1>
+                    <div class="work__image-container">
+                        <img src="{{ work.image.url }}" alt="{{ work.image.alt }}">
+                    </div>
+                </a>
+            {% endfor %}
+        </section>
+
+        <div class="page-works__side-title">
+            <h1 class="title">Works</h1>
+        </div>
     </section>
 {% endblock %}

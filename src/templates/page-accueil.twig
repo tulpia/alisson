@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <section data-router-view="home">
+    <section data-scroll-section data-router-view="home">
         <section class="page-accueil__landing">
             <h1 class="title">{{ data.fields.main_text }}</h1>
             <span class="text text--small landing__time">{{ "now"|date("d/m/Y H:i:s") }}</span>
@@ -15,11 +15,11 @@
             <div class="works works--odd">
                 {% for work in data.fields.works.odd %}
                     <a href="{{ work.permalink }}" class="works__work">
-                        <h3 class="title">{{ work.post_title }}</h3>
+                        <h3 class="title" data-scroll data-scroll-speed="2">{{ work.post_title }}</h3>
                         <div class="work__image-container">
-                            <img src="{{ work.image.url }}" alt="{{ work.image.alt }}">
+                            <img src="{{ work.image.url }}" alt="{{ work.image.alt }}" data-scroll data-scroll-speed="-2">
                         </div>
-                        <span class="text work__index">{{ work.work_index }}</span>
+                        <span class="text work__index" data-scroll data-scroll-speed="1">{{ work.work_index }}</span>
                     </a>
                 {% endfor %}
             </div>
@@ -27,11 +27,11 @@
              <div class="works works--even">
                 {% for work in data.fields.works.even %}
                     <a href="{{ work.permalink }}" class="works__work">
-                        <h3 class="title">{{ work.post_title }}</h3>
+                        <h3 class="title" data-scroll data-scroll-speed="2">{{ work.post_title }}</h3>
                         <div class="work__image-container">
-                            <img src="{{ work.image.url }}" alt="{{ work.image.alt }}">
+                            <img src="{{ work.image.url }}" alt="{{ work.image.alt }}" data-scroll data-scroll-speed="-2">
                         </div>
-                        <span class="text work__index">{{ work.work_index }}</span>
+                        <span class="text work__index" data-scroll data-scroll-speed="1">{{ work.work_index }}</span>
                     </a>
                 {% endfor %}
             </div>

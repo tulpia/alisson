@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <section data-router-view="about">
+    <section data-scroll-section data-router-view="about">
         <section class="page-about__landing">
             <h1 class="title">{{ data.fields.main_text|convert_to_underline }}</h1>
         </section>
