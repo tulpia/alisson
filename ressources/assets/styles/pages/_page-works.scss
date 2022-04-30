@@ -1,15 +1,62 @@
 [data-router-view="works"] {
+  .page-works__works-listing {
     margin-bottom: 420px;
 
-    .page-works__works-listing {
-        .works-listing__work {
-            display: block;
+    .works-listing__work {
+      display: block;
+      text-decoration: none;
 
-            .work__image-container {
-                img {
-                    display: none;
-                }
-            }
+      h1 {
+        line-height: 156px;
+        transition: color 250ms linear;
+      }
+
+      .work__image-container {
+        position: absolute;
+        width: 420px;
+        height: 650px;
+        top: 200px;
+        left: 60%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          opacity: 0;
+          transition: opacity 250ms linear;
         }
+      }
+
+      &:hover {
+        h1 {
+          color: $c_main !important;
+        }
+
+        .work__image-container img {
+          opacity: 1;
+        }
+      }
     }
+
+    &:hover {
+      h1 {
+        color: #d2d0cb;
+      }
+    }
+  }
+
+  .page-works__side-title {
+    position: absolute;
+    top: 130px;
+    right: 0;
+
+    h1 {
+      transform: rotate(-90deg);
+      color: #d2d0cb;
+      font-size: 420px;
+      transform-origin: right;
+    }
+  }
 }

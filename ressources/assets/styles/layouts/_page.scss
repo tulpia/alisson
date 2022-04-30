@@ -1,27 +1,43 @@
 body {
-    overflow-x: hidden;
-    background: $c_sub;
+  overflow-x: hidden;
+  background: $c_sub;
 
-    &.dark {
-        background: $c_main;
+  &.dark {
+    background: $c_main;
 
-        .text,
-        .title {
-            color: $c_sub;
-        }
+    .text,
+    .title {
+      color: $c_sub;
     }
+  }
 }
 
 .wrapper {
-    width: 1740px;
-    margin: 0 auto;
+  width: 1740px;
+  margin: 0 auto;
 }
 
 .wrapper-small {
-    width: 1570px;
-    margin: 0 auto;
+  width: 1570px;
+  margin: 0 auto;
+}
+
+[data-router-view] {
+  margin-top: 60px;
 }
 
 main {
-    margin-top: 60px !important;
+  margin-top: 0 !important;
+}
+
+.transition-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $c_sub;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000000;
+  opacity: 0;
+  pointer-events: none;
 }

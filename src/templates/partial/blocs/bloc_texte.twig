@@ -1,0 +1,13 @@
+<article class="wrapper-small bloc bloc-texte {% if data.layout == "two_cols" %}bloc-texte--two-cols{% endif %}">
+    {% if data.text %}
+        <div class="text">
+            {{ data.text }}
+        </div>
+    {% endif %}
+
+    {% if data.second_text and data.layout == "two_cols" %}
+        <div class="text">
+            {{ data.second_text }}
+        </div>
+    {% endif %}
+</article>

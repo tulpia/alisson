@@ -1,0 +1,58 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <section data-scroll-section data-router-view="single">
+        <section class="single-projet__landing">
+            <div class="landing__image-title">
+                <h1 class="title title--white">{{ data.post.post_title }}</h1>
+                <div class="image-title__image-container">
+                    <img src="{{ data.fields.intro_image.url }}" alt="{{ data.fields.intro_image.alt }}">
+                </div>
+            </div>
+            <div class="landing__more-infos">
+                <ul class="wrapper-small">
+                    {% if data.fields.intro_client %}
+                        <li class="text text--white">
+                            <span class="more-infos__title">Client</span>
+                            {{ data.fields.intro_client }}
+                        </li>
+                    {% endif %}
+                    {% if data.fields.intro_project_type %}
+                        <li class="text text--white">
+                            <span class="more-infos__title">Project</span>
+                            {{ data.fields.intro_project_type }}
+                        </li>
+                    {% endif %}
+                    {% if data.fields.intro_role %}
+                        <li class="text text--white">
+                            <span class="more-infos__title">Role</span>
+                            {{ data.fields.intro_role }}
+                        </li>
+                    {% endif %}
+                    {% if data.fields.intro_year %}
+                        <li class="text text--white">
+                            <span class="more-infos__title">Year</span>
+                            {{ data.fields.intro_year }}
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </section>
+
+        {% if data.fields.blocs|length %}
+            <section class="single-projet__blocs">
+                {% for bloc in data.fields.blocs %}
+                    {% include ["partial/blocs/" ~ bloc.acf_fc_layout ~ ".twig", "partial/blocs/bloc_missing.twig"] with {
+                        "data": bloc
+                    } %}
+                {% endfor %}
+            </section>
+        {% endif %}
+
+        <footer class="wrapper-small">
+            {% block footer %}
+                {% include "partial/footer.twig" %}
+            {% endblock %}
+        </footer>
+    </section>
+{% endblock %}

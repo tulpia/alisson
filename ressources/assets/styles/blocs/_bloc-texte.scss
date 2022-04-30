@@ -1,0 +1,10 @@
+.bloc-texte {
+  &--two-cols {
+    display: flex;
+    justify-content: space-between;
+
+    .text {
+      width: calc(50% - 65px);
+    }
+  }
+}

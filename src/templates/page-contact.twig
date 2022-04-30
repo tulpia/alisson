@@ -2,7 +2,7 @@
 
 {% block content %}
     <section data-scroll-section data-router-view="contact">
-        <div class="wrapper">
+        <section class="wrapper page-contact">
             <h1 class="title">{{ data.fields.main_text }}</h1>
 
             <div class="page-contact__content">
@@ -13,6 +13,12 @@
                     <a href="mailto:{{ data.fields.email }}" class="text">{{ data.fields.email }}</a>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <footer class="wrapper-small">
+            {% block footer %}
+                {% include "partial/footer.twig" %}
+            {% endblock %}
+        </footer>
     </section>
 {% endblock %}
