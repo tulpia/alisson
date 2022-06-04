@@ -37,9 +37,23 @@
       background: $c_main;
       padding: 48px 0;
 
+      @include mq_tablet {
+        padding: 40px 0;
+      }
+
       ul {
         display: flex;
         justify-content: space-between;
+
+        @include mq_tablet {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          row-gap: 30px;
+        }
+
+        @include mq_mobile {
+          grid-template-columns: 1fr;
+        }
 
         li {
           span {
@@ -54,12 +68,36 @@
   .single-projet__blocs {
     margin-top: 200px;
 
+    @include mq_tablet {
+      margin-top: 150px;
+    }
+
+    @include mq_mobile {
+      margin-top: 100px;
+    }
+
     .bloc:not(:first-child) {
       margin-top: 150px;
+
+      @include mq_tablet {
+        margin-top: 125px;
+      }
+
+      @include mq_mobile {
+        margin-top: 75px;
+      }
     }
   }
 
   footer {
     margin-top: 305px;
+
+    @include mq_tablet {
+      margin-top: 200px;
+    }
+
+    @include mq_mobile {
+      margin-top: 150px;
+    }
   }
 }

@@ -4,6 +4,19 @@
   justify-content: flex-end;
   padding-bottom: 130px;
 
+  @include mq_tablet {
+    flex-direction: column;
+    padding-bottom: 0;
+
+    div:first-child {
+      margin-bottom: 75px;
+
+      @include mq_mobile {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
   &__image-container {
     position: absolute;
     height: 100%;
@@ -17,10 +30,22 @@
       height: 100%;
       object-fit: cover;
     }
+
+    @include mq_tablet {
+      height: auto;
+      width: 100%;
+      position: relative;
+      top: auto;
+      left: auto;
+    }
   }
 
   &__text-container {
     width: calc(50% - 65px);
+
+    @include mq_tablet {
+      width: 100%;
+    }
   }
 
   &--reverse {
