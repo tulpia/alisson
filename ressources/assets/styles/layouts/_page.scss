@@ -48,6 +48,10 @@ body {
   @include mq_desktop_sm {
     width: calc(100vw - 60px);
   }
+
+  @include mq_mobile {
+    width: calc(100vw - 40px);
+  }
 }
 
 [data-router-view] {

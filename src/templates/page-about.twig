@@ -17,9 +17,13 @@
                 <ul class="experiences__list">
                     {% for experience in data.fields.experience %}
                         <li class="list__experience">
+                            <span class="text experience--role role-header">Role</span>
                             <span class="text experience--role">{{ experience.role }}</span>
+                            <span class="text experience--entreprise role-header">Entreprise</span>
                             <span class="text experience--entreprise">{{ experience.entreprise }}</span>
+                            <span class="text experience--period role-header">Period</span>
                             <span class="text experience--period">{{ experience.period }}</span>
+                            <span class="text experience--description role-header">Description</span>
                             <div class="text experience--description">{{ experience.description }}</div>
                         </li>
                     {% endfor %}
