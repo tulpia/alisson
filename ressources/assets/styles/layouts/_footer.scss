@@ -1,42 +1,100 @@
 footer {
-    padding-bottom: 295px;
-    position: relative;
-    overflow: hidden;
+  padding-bottom: 295px;
+  position: relative;
+  overflow: hidden;
 
-    .footer-grid {
-        display: grid;
-        grid-template-columns: 542px 368px auto;
+  @include mq_tablet {
+    padding-bottom: 200px;
+  }
 
-        a {
-            display: block;
-        }
+  @include mq_tablet_sm {
+    padding-bottom: 130px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 542px 368px auto;
+
+    @include mq_desktop_sm {
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    .footer__first-part {
-        margin-bottom: 110px;
+    @include mq_tablet {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 80px;
     }
 
-    .content__title {
-        opacity: .25;
+    @include mq_mobile {
+      grid-template-columns: 1fr;
+      row-gap: 40px;
     }
 
-    .footer-end-text__container {
-        position: absolute;
-        bottom: -288px;
-        left: 50%;
-        transform: translateX(-50%);
-
-        p {
-            text-align: center;
-            font-family: $f_txt;
-            color: $c_main;
-            line-height: 1;
-            font-weight: 600;
-            font-size: 450px;
-
-            body.dark & {
-                color: $c_sub;
-            }
-        }
+    a {
+      display: block;
     }
+  }
+
+  .footer__first-part {
+    margin-bottom: 110px;
+
+    @include mq_mobile {
+      margin-bottom: 80px;
+    }
+  }
+
+  .content__title {
+    opacity: 0.25;
+  }
+
+  .footer-end-text__container {
+    position: absolute;
+    bottom: -288px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include mq_desktop_sm {
+      bottom: -200px;
+    }
+
+    @include mq_tablet {
+      bottom: -225px;
+    }
+
+    @include mq_tablet_sm {
+      bottom: -150px;
+    }
+
+    @include mq_mobile {
+      bottom: -90px;
+    }
+
+    p {
+      text-align: center;
+      font-family: $f_txt;
+      color: $c_main;
+      line-height: 1;
+      font-weight: 600;
+      font-size: 450px;
+
+      @include mq_desktop_sm {
+        font-size: 400px;
+      }
+
+      @include mq_tablet {
+        font-size: 350px;
+      }
+
+      @include mq_tablet_sm {
+        font-size: 225px;
+      }
+
+      @include mq_mobile {
+        font-size: 136px;
+      }
+
+      body.dark & {
+        color: $c_sub;
+      }
+    }
+  }
 }

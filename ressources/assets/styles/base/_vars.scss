@@ -7,10 +7,11 @@ $f_txt: "FoundersGrotesk";
 $f_title: "NeueWorldCondensed";
 
 // ----------- BREAKPOINTS
-$bp_desktop: 1280px;
+$bp_desktop: 1600px;
+$bp_desktop_sm: 1280px;
 $bp_tablet: 1024px;
 $bp_tablet_sm: 800px;
-$bp_mobile: 420px;
+$bp_mobile: 499px;
 
 // ----------- MISC
-$cubic_bezier: cubic-bezier(.8, 0, .19, 1);
+$cubic_bezier: cubic-bezier(0.8, 0, 0.19, 1);

@@ -1,24 +1,28 @@
 header {
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
 
-    nav {
-        a {
-            text-transform: lowercase;
-            text-decoration: none;
+  @include mq_tablet {
+    display: none;
+  }
 
-            &:not(:first-child) {
-                margin-left: 55px;
-            }
+  nav {
+    a {
+      text-transform: lowercase;
+      text-decoration: none;
 
-            &.is-active {
-                text-decoration: underline;
-            }
-        }
+      &:not(:first-child) {
+        margin-left: 55px;
+      }
+
+      &.is-active {
+        text-decoration: underline;
+      }
     }
+  }
 }
