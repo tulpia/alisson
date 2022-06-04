@@ -1,6 +1,10 @@
 [data-router-view="contact"] {
   .page-contact {
     margin-bottom: 200px;
+
+    @include mq_mobile {
+      margin-bottom: 150px;
+    }
   }
 
   .page-contact__content {
@@ -9,16 +13,51 @@
     display: flex;
     justify-content: space-between;
 
+    @include mq_tablet {
+      flex-direction: column;
+    }
+
+    @include mq_mobile {
+      margin-top: 50px;
+    }
+
     div {
       width: 43.5%;
 
       &:first-child {
         display: flex;
         justify-content: flex-end;
+
+        @include mq_tablet {
+          justify-content: flex-start;
+        }
       }
 
       a {
         font-size: 42px;
+
+        @include mq_desktop_sm {
+          font-size: 36px;
+        }
+
+        @include mq_tablet {
+          display: block;
+          margin-top: 20px;
+          font-size: 32px;
+        }
+
+        @include mq_mobile {
+          font-size: 24px;
+        }
+      }
+
+      @include mq_tablet {
+        width: 100%;
+        margin-left: 43.5%;
+      }
+
+      @include mq_tablet_sm {
+        margin-left: 0;
       }
     }
   }
