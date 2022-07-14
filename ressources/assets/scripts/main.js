@@ -1,6 +1,7 @@
 // Dependencies
 import Highway from "@dogstudio/highway";
 import LocomotiveScroll from "locomotive-scroll";
+import Menu from "./classes/Menu";
 
 // Renderers
 import AccueilRenderer from "./renderers/AccueilRenderer";
@@ -12,42 +13,66 @@ import SingleRenderer from "./renderers/SingleRenderer";
 // Transitions
 import DefaultTransition from "./transitions/DefaultTransition";
 import Breakpoints from "./utils/breakpoints";
+import Loader from "./classes/Loader";
 
-let scroll;
+class Main {
+  constructor() {
+    this.menu;
+    this.scroll;
+    this.highway;
+    this.loader;
 
-document.addEventListener("DOMContentLoaded", function () {
-  // eslint-disable-line
-  const H = new Highway.Core({
-    renderers: {
-      accueil: AccueilRenderer,
-      about: AboutRenderer,
-      contact: ContactRenderer,
-      works: WorksRenderer,
-      single: SingleRenderer,
-    },
-    transitions: {
-      default: DefaultTransition,
-    },
-  });
+    this.initLoader();
+    this.initLocomotive();
+    this.initHighway();
+    this.initMenu();
+  }
 
-  if (Breakpoints.isTabletOrBigger()) {
-    scroll = new LocomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
-      smooth: true,
-      inertia: 0.5,
+  initLoader() {
+    this.loader = new Loader([...document.querySelectorAll("img")]);
+  }
+
+  initHighway() {
+    this.highway = new Highway.Core({
+      renderers: {
+        home: AccueilRenderer,
+        about: AboutRenderer,
+        contact: ContactRenderer,
+        works: WorksRenderer,
+        single: SingleRenderer,
+      },
+      transitions: {
+        default: DefaultTransition,
+      },
     });
-  } else {
-    scroll = new LocomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
-      smooth: false,
+
+    this.highway.on("NAVIGATE_OUT", () => {
+      this.scroll.scrollTo("[data-router-view]");
+    });
+
+    this.highway.on("NAVIGATE_END", ({ location }) => {
+      this.scroll.update();
     });
   }
 
-  H.on("NAVIGATE_OUT", () => {
-    scroll.scrollTo("[data-router-view]");
-  });
+  initLocomotive() {
+    if (Breakpoints.isTabletOrBigger()) {
+      this.scroll = new LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]"),
+        smooth: true,
+        inertia: 0.5,
+      });
+    } else {
+      this.scroll = new LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]"),
+        smooth: false,
+      });
+    }
+  }
 
-  H.on("NAVIGATE_END", () => {
-    scroll.update();
-  });
-});
+  initMenu() {
+    this.menu = new Menu();
+  }
+}
+
+new Main();

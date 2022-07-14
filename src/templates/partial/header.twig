@@ -1,5 +1,19 @@
-<nav>
+<button id="btn-menu">
+    <div class="btn-open-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="btn-close-menu">
+        <span></span>
+        <span></span>
+    </div>
+</button>
+
+<nav id="menu">
     {% for item in data.menus.menu_principal.items %}
         <a href="{{ item.link }}" class="text text--small{% if item.current %} is-active{% endif %}">.{{ item.title }}</a>
     {% endfor %}
+    <div class="mobile-menu-background"></div>
+    <div class="mobile-menu-background-2"></div>
 </nav>
