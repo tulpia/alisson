@@ -1,26 +1,40 @@
 import { gsap } from "gsap";
+import Breakpoints from "../utils/breakpoints";
 
 class Menu {
   constructor() {
-    this.btnMenu;
-    this.menu;
     this.tl;
     this.isOpen = false;
     this.isOpening = false;
-
-    this.getEls();
-    this.createTimeline();
-    this.events();
-  }
-
-  getEls() {
     this.btnMenu = document.querySelector("#btn-menu");
+    this.menu = document.querySelector("#menu");
     this.openMenuContainer = this.btnMenu.querySelector(".btn-open-menu");
     this.closeMenuContainer = this.btnMenu.querySelector(".btn-close-menu");
-    this.menu = document.querySelector("#menu");
+    this.links = [...this.menu.querySelectorAll("a")];
+
+    this.activateLinksOnClicks();
+
+    if (!Breakpoints.isTabletOrBigger()) {
+      this.createTimeline();
+      this.eventsMobile();
+    }
   }
 
-  events() {
+  activateLinksOnClicks() {
+    this.links.forEach((link) => {
+      link.addEventListener("click", () => {
+        this.links.forEach((linkUnclicked) => {
+          if (linkUnclicked.classList.contains("is-active")) {
+            linkUnclicked.classList.remove("is-active");
+          }
+        });
+
+        link.classList.add("is-active");
+      });
+    });
+  }
+
+  eventsMobile() {
     this.btnMenu.addEventListener("click", () => {
       if (!this.isOpening) {
         if (this.isOpen) {
@@ -31,7 +45,7 @@ class Menu {
       }
     });
 
-    [...this.menu.querySelectorAll("a")].forEach((link) => {
+    this.links.forEach((link) => {
       link.addEventListener("click", () => {
         this.closeMenu();
       });
@@ -83,7 +97,7 @@ class Menu {
         ">-0.85"
       )
       .fromTo(
-        [...this.menu.querySelectorAll("a")],
+        this.links,
         {
           x: 15,
           opacity: 0,

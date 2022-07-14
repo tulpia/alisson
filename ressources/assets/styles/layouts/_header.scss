@@ -124,6 +124,26 @@ header {
     .text--small {
       text-transform: lowercase;
       text-decoration: none;
+      display: inline-block;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: 5px;
+        left: 0;
+        background-color: $c_main;
+        transform-origin: bottom right;
+        transition: transform 0.4s $cubic_bezier;
+      }
+
+      &:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
 
       &:not(:first-child) {
         margin-left: 55px;
@@ -133,8 +153,9 @@ header {
         }
       }
 
-      &.is-active {
-        text-decoration: underline;
+      &.is-active:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
       }
 
       @include mq_tablet {
