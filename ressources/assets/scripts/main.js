@@ -1,6 +1,7 @@
 // Dependencies
 import Highway from "@dogstudio/highway";
 import LocomotiveScroll from "locomotive-scroll";
+import Menu from "./classes/Menu";
 
 // Renderers
 import AccueilRenderer from "./renderers/AccueilRenderer";
@@ -14,6 +15,7 @@ import DefaultTransition from "./transitions/DefaultTransition";
 import Breakpoints from "./utils/breakpoints";
 
 let scroll;
+let menu;
 
 // eslint-disable-line
 const H = new Highway.Core({
@@ -40,6 +42,8 @@ if (Breakpoints.isTabletOrBigger()) {
     el: document.querySelector("[data-scroll-container]"),
     smooth: false,
   });
+
+  menu = new Menu();
 }
 
 H.on("NAVIGATE_OUT", () => {
