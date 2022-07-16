@@ -4,17 +4,20 @@
     <section data-scroll-section data-router-view="works">
         <section class="wrapper page-works__works-listing">
             {% for work in data.works %}
-                <a href="{{ work.permalink }}" class="works-listing__work">
+                <a href="{{ work.permalink }}" class="works-listing__work" data-index="{{ loop.index }}">
                     <h1 class="title">{{ work.post_title }}</h1>
-                    <div class="work__image-container">
-                        <img src="{{ work.image.url }}" alt="{{ work.image.alt }}" data-scroll data-scroll-speed="-2">
-                    </div>
                 </a>
             {% endfor %}
         </section>
 
         <div class="page-works__side-title" data-scroll data-scroll-speed="3">
-            <h1 class="title">Works</h1>
+            <h1 class="title"><span>Works</span></h1>
+        </div>
+
+        <div class="page-works__images-container">
+            {% for work in data.works %}
+                <img src="{{ work.image.url }}" alt="{{ work.image.alt }}" data-index="{{ loop.index }}">
+            {% endfor %}
         </div>
 
         <footer class="wrapper-small">

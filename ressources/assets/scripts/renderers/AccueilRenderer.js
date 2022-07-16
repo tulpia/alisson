@@ -149,9 +149,13 @@ class AccueilRenderer extends Highway.Renderer {
     });
   }
 
-  onLeave() {}
+  onLeave() {
+    this.scroll.destroy();
+  }
 
   onEnterCompleted() {
+    this.scroll.update();
+
     Loader.onLoad(() => {
       this.tlLanding.play();
     });

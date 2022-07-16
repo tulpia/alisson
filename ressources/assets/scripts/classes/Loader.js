@@ -108,11 +108,11 @@ class Loader {
 
   static onLoad(callback) {
     if (window.isLoaderFinished) {
-      callback();
+      callback(false);
     }
 
     document.addEventListener("loaderOnFinished", () => {
-      callback();
+      callback(true);
     });
   }
 }
