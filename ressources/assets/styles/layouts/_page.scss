@@ -1,13 +1,16 @@
 body {
   overflow-x: hidden;
   background: $c_sub;
+  transition: background 250ms linear;
 
   &.dark {
     background: $c_main;
+    transition: background 250ms linear;
 
     .text,
     .title {
       color: $c_sub;
+      transition: color 250ms linear;
     }
   }
 }

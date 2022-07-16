@@ -24,6 +24,25 @@ class Main {
     this.initLoader();
     this.initHighway();
     this.initMenu();
+
+    // Specificites
+    this.changeColorInAbout();
+  }
+
+  changeColorInAbout() {
+    this.highway.on("NAVIGATE_IN", ({ to, trigger, location }) => {
+      if (location.pathname === "/about/") {
+        if (!document.body.classList.contains("dark")) {
+          document.body.classList.add("dark");
+        }
+      }
+    });
+
+    this.highway.on("NAVIGATE_OUT", ({ to, trigger, location }) => {
+      if (document.body.classList.contains("dark")) {
+        document.body.classList.remove("dark");
+      }
+    });
   }
 
   initLoader() {

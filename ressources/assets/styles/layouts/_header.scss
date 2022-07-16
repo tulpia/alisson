@@ -138,6 +138,10 @@ header {
         background-color: $c_main;
         transform-origin: bottom right;
         transition: transform 0.4s $cubic_bezier;
+
+        body.dark & {
+          background-color: $c_sub;
+        }
       }
 
       &:hover:after {

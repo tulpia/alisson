@@ -13,6 +13,21 @@
           content: none;
         }
       }
+
+      body.dark & {
+        text-shadow: -2px -2px $c_main, -2px 2px $c_main, 2px -2px $c_main,
+          2px 2px $c_main;
+
+        .underline {
+          background-size: 1px 1em;
+          box-shadow: inset 0 -0.175em $c_main, inset 0 -0.2em $c_sub;
+          display: inline;
+
+          &:after {
+            content: none;
+          }
+        }
+      }
     }
   }
 
@@ -95,6 +110,7 @@
         li {
           padding-top: 50px;
           padding-bottom: 50px;
+          position: relative;
 
           @include mq_mobile {
             padding-top: 35px;
@@ -113,13 +129,15 @@
               }
             }
           }
+          border-bottom: none !important;
 
-          &:not(:last-child) {
-            border-bottom: 1px solid $c_main;
-
-            body.dark & {
-              border-color: $c_sub;
-            }
+          .line {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background: $c_sub;
           }
         }
       }
