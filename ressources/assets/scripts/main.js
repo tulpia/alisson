@@ -18,12 +18,10 @@ import Loader from "./classes/Loader";
 class Main {
   constructor() {
     this.menu;
-    this.scroll;
     this.highway;
     this.loader;
 
     this.initLoader();
-    this.initLocomotive();
     this.initHighway();
     this.initMenu();
   }
@@ -45,29 +43,25 @@ class Main {
         default: DefaultTransition,
       },
     });
-
-    this.highway.on("NAVIGATE_OUT", () => {
-      this.scroll.scrollTo("[data-router-view]");
-    });
-
-    this.highway.on("NAVIGATE_END", ({ location }) => {
-      this.scroll.update();
-    });
   }
 
-  initLocomotive() {
+  static initLocomotive() {
+    let scroll;
+
     if (Breakpoints.isTabletOrBigger()) {
-      this.scroll = new LocomotiveScroll({
+      scroll = new LocomotiveScroll({
         el: document.querySelector("[data-scroll-container]"),
         smooth: true,
         inertia: 0.5,
       });
     } else {
-      this.scroll = new LocomotiveScroll({
+      scroll = new LocomotiveScroll({
         el: document.querySelector("[data-scroll-container]"),
         smooth: false,
       });
     }
+
+    return scroll;
   }
 
   initMenu() {
@@ -76,3 +70,5 @@ class Main {
 }
 
 new Main();
+
+export default Main;

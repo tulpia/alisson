@@ -43,9 +43,18 @@ class Loader {
   }
 
   imagesLoaded() {
-    const tl = gsap.timeline({ paused: true });
     const percentText = this.loader.querySelector(".text--white");
     const percentLine = this.loader.querySelector(".loader-container__line");
+    const tl = gsap.timeline({
+      paused: true,
+      onStart: () => {
+        setTimeout(() => {
+          document.dispatchEvent(new CustomEvent("loaderOnFinished"));
+
+          window.isLoaderFinished = true;
+        }, 1300);
+      },
+    });
 
     setTimeout(() => {
       this.update(100);
@@ -95,6 +104,16 @@ class Loader {
         tl.play();
       }, 250);
     }, 750);
+  }
+
+  static onLoad(callback) {
+    if (window.isLoaderFinished) {
+      callback();
+    }
+
+    document.addEventListener("loaderOnFinished", () => {
+      callback();
+    });
   }
 }
 
