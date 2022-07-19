@@ -1,0 +1,24 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <section data-scroll-section data-router-view="contact">
+        <section class="wrapper page-contact">
+            <h1 class="title">{{ data.fields.main_text }}</h1>
+
+            <div class="page-contact__content">
+                <div>
+                    <p class="text introduction">{{ data.fields.text_before_mail }}</p>
+                </div>
+                <div>
+                    <a href="mailto:{{ data.fields.email }}" class="text mail">{{ data.fields.email }}</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="wrapper-small">
+            {% block footer %}
+                {% include "partial/footer.twig" %}
+            {% endblock %}
+        </footer>
+    </section>
+{% endblock %}

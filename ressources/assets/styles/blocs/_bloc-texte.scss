@@ -1,0 +1,22 @@
+.bloc-texte {
+  &--two-cols {
+    display: flex;
+    justify-content: space-between;
+
+    @include mq_tablet {
+      flex-direction: column;
+    }
+
+    .text {
+      width: calc(50% - 65px);
+
+      @include mq_tablet {
+        width: 100%;
+
+        &:not(:first-child) {
+          margin-top: 75px;
+        }
+      }
+    }
+  }
+}

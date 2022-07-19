@@ -1,0 +1,44 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <section data-scroll-section data-router-view="about">
+        <section class="wrapper page-about__landing">
+            <h1 class="title">{{ data.fields.main_text|convert_to_underline }}</h1>
+        </section>
+        <section class="wrapper-small page-about__experience" data-scroll data-scroll-call="experience">
+            <h2>Professional<br />experience</h2>
+            <div class="experiences">
+                <div class="experiences__header">
+                    <span class="text experience--role">Role</span>
+                    <span class="text experience--entreprise">Entreprise</span>
+                    <span class="text experience--period">Period</span>
+                    <span class="text experience--description">Description</span>
+                </div>
+                <ul class="experiences__list">
+                    {% for experience in data.fields.experience %}
+                        <li class="list__experience" data-scroll data-scroll-call="work-{{ loop.index }}">
+                            <span class="text experience--role role-header">Role</span>
+                            <span class="text experience--role">{{ experience.role }}</span>
+                            <span class="text experience--entreprise role-header">Entreprise</span>
+                            <span class="text experience--entreprise">{{ experience.entreprise }}</span>
+                            <span class="text experience--period role-header">Period</span>
+                            <span class="text experience--period">{{ experience.period }}</span>
+                            <span class="text experience--description role-header">Description</span>
+                            <div class="text experience--description">{{ experience.description }}</div>
+
+                            {% if loop.last == false %}
+                                <span class="line"></span>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <footer class="wrapper-small">
+            {% block footer %}
+                {% include "partial/footer.twig" %}
+            {% endblock %}
+        </footer>
+    </section>
+{% endblock %}

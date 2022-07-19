@@ -1,0 +1,20 @@
+{
+    "name": "alec/starter",
+    "description": "stuff",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Alec TEIHOTAATA",
+            "email": "teihotaata.alec@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "controllers"
+        }
+    },
+    "require": {
+        "timber/timber": "^1.19",
+        "larapack/dd": "^1.1"
+    }
+}

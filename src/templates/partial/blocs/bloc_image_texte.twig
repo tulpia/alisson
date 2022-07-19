@@ -1,0 +1,9 @@
+<article class="wrapper-small bloc bloc-image-texte {% if data.layout == "img_right_txt_left" %}bloc-image-texte--reverse{% endif %}">
+    <div class="bloc-image-texte__image-container">
+        <img src="{{ data.image.url }}" alt="{{ data.image.alt }}">
+    </div>
+
+    <div class="text bloc-image-texte__text-container">
+        {{ data.text }}
+    </div>
+</article>

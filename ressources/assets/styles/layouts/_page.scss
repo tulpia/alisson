@@ -1,0 +1,86 @@
+body {
+  overflow-x: hidden;
+  background: $c_sub;
+  transition: background 250ms linear;
+
+  &.dark {
+    background: $c_main;
+    transition: background 250ms linear;
+
+    .text,
+    .title {
+      color: $c_sub;
+      transition: color 250ms linear;
+    }
+  }
+}
+
+.wrapper {
+  width: 1740px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1750px) {
+    width: 1600px;
+  }
+
+  @include mq_desktop {
+    width: 1400px;
+  }
+
+  @media screen and (max-width: 1450px) {
+    width: 1280px;
+  }
+
+  @include mq_desktop_sm {
+    width: calc(100vw - 80px);
+  }
+
+  @include mq_mobile {
+    width: calc(100vw - 40px);
+  }
+}
+
+.wrapper-small {
+  width: 1570px;
+  margin: 0 auto;
+
+  @include mq_desktop {
+    width: 1280px;
+  }
+
+  @include mq_desktop_sm {
+    width: calc(100vw - 60px);
+  }
+
+  @include mq_mobile {
+    width: calc(100vw - 40px);
+  }
+}
+
+[data-router-view] {
+  margin-top: 60px;
+
+  @include mq_tablet {
+    margin-top: 40px;
+  }
+
+  @include mq_mobile {
+    margin-top: 30px;
+  }
+}
+
+main {
+  margin-top: 0 !important;
+}
+
+.transition-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $c_sub;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000000;
+  opacity: 0;
+  pointer-events: none;
+}

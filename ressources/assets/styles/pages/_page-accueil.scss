@@ -1,0 +1,228 @@
+[data-router-view="home"] {
+  .page-accueil__landing {
+    height: calc(100vh - 120px);
+    position: relative;
+
+    @include mq_tablet {
+      height: calc(100vh - 80px);
+    }
+
+    @include mq_mobile {
+      height: calc(100vh - 50px);
+    }
+
+    .landing__time {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .page-accueil__intro {
+    margin-top: 275px;
+
+    @include mq_desktop {
+      margin-top: 250px;
+    }
+
+    @include mq_tablet {
+      margin-top: 150px;
+    }
+
+    .text {
+      margin-left: 50%;
+      width: 50%;
+
+      @include mq_tablet_sm {
+        width: 100%;
+        margin-left: auto;
+      }
+    }
+  }
+
+  .page-accueil__works {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 375px;
+    margin-bottom: 378px;
+
+    @include mq_desktop {
+      max-width: 95vw;
+      margin-top: 350px;
+      margin-bottom: 350px;
+    }
+
+    @include mq_tablet {
+      max-width: auto;
+      margin-top: 150px;
+      flex-direction: column;
+      margin-bottom: 200px;
+    }
+
+    .works {
+      width: 660px;
+
+      @include mq_desktop {
+        width: 550px;
+      }
+
+      @include mq_desktop_sm {
+        width: calc(50% - 40px);
+      }
+
+      @include mq_tablet {
+        width: 100%;
+      }
+
+      &__work {
+        width: 100%;
+        height: 920px;
+        display: block;
+        position: relative;
+
+        @include mq_desktop {
+          height: 750px;
+        }
+
+        @include mq_desktop_sm {
+          height: 600px;
+        }
+
+        @include mq_tablet {
+          height: 500px;
+        }
+
+        .title {
+          position: absolute;
+          top: 90px;
+          left: -90px;
+          font-size: 62px;
+          line-height: 70px;
+          z-index: 3;
+
+          @media screen and (max-width: 1750px) {
+            left: -30px;
+          }
+
+          @include mq_desktop_sm {
+            font-size: 54px;
+            line-height: 62px;
+          }
+
+          @include mq_tablet {
+            font-size: 62px;
+            line-height: 70px;
+            top: -25px;
+            left: 30px;
+            font-size: 48px;
+            line-height: 58px;
+          }
+        }
+
+        .work__index {
+          font-weight: 600;
+          font-size: 150px;
+          line-height: 1;
+          position: absolute;
+          bottom: -60px;
+          right: -50px;
+          opacity: 0.25;
+          z-index: 3;
+          mix-blend-mode: difference;
+
+          @include mq_desktop_sm {
+            font-size: 125px;
+          }
+
+          @include mq_tablet {
+            display: none;
+          }
+        }
+
+        .work__image-container {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          z-index: 2;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+          }
+
+          .image-cover-anim {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            background: $c_sub;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+          }
+        }
+
+        &:not(:first-child) {
+          margin-top: 575px;
+
+          @include mq_desktop {
+            margin-top: 450px;
+          }
+
+          @include mq_tablet {
+            margin-top: 175px;
+          }
+
+          @include mq_mobile {
+            margin-top: 150px;
+          }
+        }
+      }
+
+      &--even {
+        margin-top: 740px;
+
+        @include mq_desktop {
+          margin-top: 600px;
+        }
+
+        @include mq_tablet {
+          margin-top: inherit;
+        }
+
+        @include mq_mobile {
+          margin-top: inherit;
+        }
+
+        .title {
+          left: auto;
+          right: -50px;
+          text-align: right;
+
+          @media screen and (max-width: 1750px) {
+            right: -30px;
+          }
+
+          @include mq_tablet {
+            right: auto;
+            bottom: inherit;
+            left: 30px;
+          }
+        }
+
+        .work__index {
+          right: auto;
+          left: -50px;
+
+          @include mq_tablet {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

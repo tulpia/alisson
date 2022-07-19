@@ -1,0 +1,48 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <section data-scroll-section data-router-view="home">
+        <section class="wrapper page-accueil__landing">
+            <h1 class="title">{{ data.fields.main_text }}</h1>
+            <span class="text text--small landing__time">{{ "now"|date("d/m/Y H:i:s") }}</span>
+        </section>
+        <section class="wrapper-small page-accueil__intro" data-scroll data-scroll-call="introduction" data-scroll-position="bottom" data-scroll-delay="2">
+            <div class="text">
+                {{ data.fields.main_paragraph }}
+            </div>
+        </section>
+        <section class="wrapper-small page-accueil__works">
+            <div class="works works--odd">
+                {% for work in data.fields.works.odd %}
+                    <a href="{{ work.permalink }}" class="works__work" data-scroll data-scroll-call="work-odd-{{ loop.index }}">
+                        <h3 class="title" data-scroll data-scroll-speed="2">{{ work.post_title }}</h3>
+                        <div class="work__image-container">
+                            <img src="{{ work.image.url }}" alt="{{ work.image.alt }}" data-scroll data-scroll-speed="-2">
+                            <div class="image-cover-anim"></div>
+                        </div>
+                        <span class="text work__index" data-scroll data-scroll-speed="1">{{ work.work_index }}</span>
+                    </a>
+                {% endfor %}
+            </div>
+
+             <div class="works works--even">
+                {% for work in data.fields.works.even %}
+                    <a href="{{ work.permalink }}" class="works__work" data-scroll data-scroll-call="work-even-{{ loop.index }}">
+                        <h3 class="title" data-scroll data-scroll-speed="2">{{ work.post_title }}</h3>
+                        <div class="work__image-container">
+                            <img src="{{ work.image.url }}" alt="{{ work.image.alt }}" data-scroll data-scroll-speed="-2">
+                            <div class="image-cover-anim"></div>
+                        </div>
+                        <span class="text work__index" data-scroll data-scroll-speed="1">{{ work.work_index }}</span>
+                    </a>
+                {% endfor %}
+            </div>
+        </section>
+
+        <footer class="wrapper-small">
+            {% block footer %}
+                {% include "partial/footer.twig" %}
+            {% endblock %}
+        </footer>
+    </section>
+{% endblock %}

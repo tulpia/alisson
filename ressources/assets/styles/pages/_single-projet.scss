@@ -1,0 +1,103 @@
+[data-router-view="single"] {
+  margin-top: 0;
+  .single-projet__landing {
+    .landing__image-title {
+      height: calc(100vh - 80px);
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .title {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .image-title__image-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .landing__more-infos {
+      width: 100vw;
+      background: $c_main;
+      padding: 48px 0;
+
+      @include mq_tablet {
+        padding: 40px 0;
+      }
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+
+        @include mq_tablet {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          row-gap: 30px;
+        }
+
+        @include mq_mobile {
+          grid-template-columns: 1fr;
+        }
+
+        li {
+          span {
+            display: block;
+            opacity: 0.2;
+          }
+        }
+      }
+    }
+  }
+
+  .single-projet__blocs {
+    margin-top: 200px;
+
+    @include mq_tablet {
+      margin-top: 150px;
+    }
+
+    @include mq_mobile {
+      margin-top: 100px;
+    }
+
+    .bloc:not(:first-child) {
+      margin-top: 150px;
+
+      @include mq_tablet {
+        margin-top: 125px;
+      }
+
+      @include mq_mobile {
+        margin-top: 75px;
+      }
+    }
+  }
+
+  footer {
+    margin-top: 305px;
+
+    @include mq_tablet {
+      margin-top: 200px;
+    }
+
+    @include mq_mobile {
+      margin-top: 150px;
+    }
+  }
+}
