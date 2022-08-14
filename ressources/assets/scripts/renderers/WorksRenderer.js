@@ -54,7 +54,9 @@ class WorksRenderer extends Highway.Renderer {
       );
   }
 
-  onLeave() {}
+  onLeave() {
+    this.scroll.destroy();
+  }
 
   onEnterCompleted() {
     this.scroll.update();

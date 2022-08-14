@@ -1,4 +1,4 @@
-<article class="wrapper-small bloc bloc-texte {% if data.layout == "two_cols" %}bloc-texte--two-cols{% endif %}">
+<article class="wrapper-small bloc bloc-texte {% if data.layout == "two_cols" %}bloc-texte--two-cols{% endif %}" data-scroll data-scroll-call="bloc-{{ index }}" data-bloc="Texte">
     {% if data.text %}
         <div class="text">
             {{ data.text }}
