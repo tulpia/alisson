@@ -30,6 +30,7 @@ header {
 
     @include mq_tablet {
       display: block;
+      pointer-events: auto !important;
     }
   }
 
