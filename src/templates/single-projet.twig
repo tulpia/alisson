@@ -43,7 +43,8 @@
             <section class="single-projet__blocs">
                 {% for bloc in data.fields.blocs %}
                     {% include ["partial/blocs/" ~ bloc.acf_fc_layout ~ ".twig", "partial/blocs/bloc_missing.twig"] with {
-                        "data": bloc
+                        "data": bloc,
+                        "index": loop.index
                     } %}
                 {% endfor %}
             </section>

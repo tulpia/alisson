@@ -4,6 +4,7 @@ import Loader from "../classes/Loader";
 import Main from "../main";
 import { gsap } from "gsap";
 import SplitType from "split-type";
+import Breakpoints from "../utils/breakpoints";
 
 class AccueilRenderer extends Highway.Renderer {
   constructor(properties) {
@@ -30,7 +31,6 @@ class AccueilRenderer extends Highway.Renderer {
     //------------------------
 
     // Anims landing
-    const linksHeader = [...document.querySelectorAll("#menu a")];
     const title = new SplitType(".page-accueil__landing .title", {
       types: "lines",
     });
@@ -59,8 +59,12 @@ class AccueilRenderer extends Highway.Renderer {
           duration: 0.25,
         },
         ">-.5"
-      )
-      .fromTo(
+      );
+
+    if (Breakpoints.isTabletOrBigger()) {
+      const linksHeader = [...document.querySelectorAll("#menu a")];
+
+      this.tlLanding.fromTo(
         linksHeader,
         {
           opacity: 0,
@@ -72,6 +76,7 @@ class AccueilRenderer extends Highway.Renderer {
         },
         ">-.15"
       );
+    }
 
     // Anims introduction
     const tlIntro = gsap.timeline({ paused: true });

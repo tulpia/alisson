@@ -1,6 +1,7 @@
-<article class="wrapper-small bloc bloc-image-texte {% if data.layout == "img_right_txt_left" %}bloc-image-texte--reverse{% endif %}">
+<article class="wrapper-small bloc bloc-image-texte {% if data.layout == "img_right_txt_left" %}bloc-image-texte--reverse{% endif %}" data-scroll data-scroll-call="bloc-{{ index }}" data-bloc="ImageTexte">
     <div class="bloc-image-texte__image-container">
         <img src="{{ data.image.url }}" alt="{{ data.image.alt }}">
+        <div class="bloc-image-texte__anim-component"></div>
     </div>
 
     <div class="text bloc-image-texte__text-container">

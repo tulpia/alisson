@@ -62,7 +62,7 @@ class Menu {
       onComplete: () => {
         this.isOpen = true;
 
-        this.menu.classList.add("is-active");
+        this.menu.parentNode.classList.add("is-active");
       },
       onReverseComplete: () => {
         this.isOpen = false;
@@ -119,7 +119,7 @@ class Menu {
   }
 
   closeMenu() {
-    this.menu.classList.remove("is-active");
+    this.menu.parentNode.classList.remove("is-active");
 
     setTimeout(() => {
       this.closeMenuContainer.classList.remove("is-active");
