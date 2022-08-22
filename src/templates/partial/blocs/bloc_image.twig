@@ -1,4 +1,4 @@
 <article class="wrapper-small bloc bloc-image" data-scroll data-scroll-call="bloc-{{ index }}" data-bloc="Image">
-    <img src="{{ data.image.url }}" alt="{{ data.image.alt }}">
+    {{ renderImage(data.image) }}
     <div class="bloc-image__anim-component"></div>
 </article>

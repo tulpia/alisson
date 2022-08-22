@@ -17,7 +17,7 @@
                     <a href="{{ work.permalink }}" class="works__work" data-scroll data-scroll-call="work-odd-{{ loop.index }}">
                         <h3 class="title" data-scroll data-scroll-speed="2">{{ work.post_title }}</h3>
                         <div class="work__image-container">
-                            <img src="{{ work.image.url }}" alt="{{ work.image.alt }}" data-scroll data-scroll-speed="-2">
+                            {{ renderImage(work.image, { datascroll: true, credit_class: "left" }) }}
                             <div class="image-cover-anim"></div>
                         </div>
                         <span class="text work__index" data-scroll data-scroll-speed="1">{{ work.work_index }}</span>
@@ -30,7 +30,7 @@
                     <a href="{{ work.permalink }}" class="works__work" data-scroll data-scroll-call="work-even-{{ loop.index }}">
                         <h3 class="title" data-scroll data-scroll-speed="2">{{ work.post_title }}</h3>
                         <div class="work__image-container">
-                            <img src="{{ work.image.url }}" alt="{{ work.image.alt }}" data-scroll data-scroll-speed="-2">
+                            {{ renderImage(work.image, { datascroll: true }) }}
                             <div class="image-cover-anim"></div>
                         </div>
                         <span class="text work__index" data-scroll data-scroll-speed="1">{{ work.work_index }}</span>

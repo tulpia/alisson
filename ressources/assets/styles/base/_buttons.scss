@@ -1,0 +1,29 @@
+.btn {
+  @include ft_txt();
+  background: transparent;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 12px;
+  line-height: 1;
+  padding: 22px 38px 18px 38px;
+  border: 1px solid $c_main;
+  display: inline !important;
+  border-radius: 38px;
+  transition: background 250ms linear, color 250ms linear;
+
+  &:hover {
+    color: $c_sub;
+    background: $c_main;
+  }
+
+  @include mq_desktop_sm {
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  @include mq_mobile() {
+    font-size: 12px;
+    line-height: 1;
+  }
+}

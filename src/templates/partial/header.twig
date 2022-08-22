@@ -12,7 +12,7 @@
 
 <nav id="menu">
     {% for item in data.menus.menu_principal.items %}
-        <a href="{{ item.link }}" class="text text--small{% if item.current %} is-active{% endif %}">.{{ item.title }}</a>
+        <a href="{{ item.link }}" class="text text--small{% if item.current %} is-active{% endif %}{% if item.classes %} {{ item.classes|join(" ") }}{% endif %}">.{{ item.title }}</a>
     {% endfor %}
     <div class="mobile-menu-background"></div>
     <div class="mobile-menu-background-2"></div>

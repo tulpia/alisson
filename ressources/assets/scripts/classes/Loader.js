@@ -23,7 +23,7 @@ class Loader {
       this.images.forEach((image, index) => {
         imagesLoaded(image, () => {
           imagesIndex++;
-          const percent = (imagesIndex / this.images.length) * 100;
+          const percent = Math.round((imagesIndex / this.images.length) * 100);
 
           if (imagesIndex === this.images.length) {
             this.imagesLoaded();

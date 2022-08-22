@@ -6,7 +6,7 @@
             <div class="landing__image-title">
                 <h1 class="title title--white">{{ data.post.post_title }}</h1>
                 <div class="image-title__image-container">
-                    <img src="{{ data.fields.intro_image.url }}" alt="{{ data.fields.intro_image.alt }}">
+                    {{ renderImage(data.fields.intro_image) }}
                 </div>
             </div>
             <div class="landing__more-infos">

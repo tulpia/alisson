@@ -25,13 +25,14 @@
     top: 0;
     left: 0;
 
-    img {
+    figure {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      position: relative;
-      z-index: 1;
-      opacity: 0;
+
+      img {
+        z-index: 1;
+        opacity: 0;
+      }
     }
 
     .bloc-image-texte__anim-component {

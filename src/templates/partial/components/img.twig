@@ -1,0 +1,7 @@
+<figure>
+    <img src="{{ image.url }}" alt="{{ image.alt }}"{% if options.datascroll %} data-scroll data-scroll-speed="-2"{% endif %}>
+
+    {% if image.credit %}
+        <span class="credits{% if options.credit_class %} {{ options.credit_class }}{% endif %}">© {{ image.credit }}</span>
+    {% endif %}
+</figure>

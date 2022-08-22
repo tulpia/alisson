@@ -29,8 +29,12 @@ footer {
       row-gap: 40px;
     }
 
-    a {
+    a:not(.no-block) {
       display: block;
+    }
+
+    .no-block {
+      display: inline;
     }
   }
 
