@@ -92,6 +92,7 @@
     width: 420px;
     height: 650px;
     overflow: hidden;
+    pointer-events: none;
 
     .image-container {
       position: absolute;
