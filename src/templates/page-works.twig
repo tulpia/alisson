@@ -16,7 +16,9 @@
 
         <div class="page-works__images-container">
             {% for work in data.works %}
-                <img src="{{ work.image.url }}" alt="{{ work.image.alt }}" data-index="{{ loop.index }}">
+                <div class="image-container" data-index="{{ loop.index }}">
+                    {{ renderImage(work.image) }}
+                </div>
             {% endfor %}
         </div>
 

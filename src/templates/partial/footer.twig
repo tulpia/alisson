@@ -1,25 +1,38 @@
 <div class="footer-grid footer__first-part">
-    <div>
-        <p class="text content__title">Get in touch</p>
-        <a class="text" href="mailto:alisson.carmona@gmail.com">alisson.carmona@gmail.com</a>
-    </div>
-    <div>
-        <p class="text content__title">Social</p>
-        <a class="text" href="https://www.linkedin.com/in/alisson-carmona-03684a197/?originalSubdomain=fr" target="_blank">Linkedin</a>
-        <a class="text" href="https://www.instagram.com/alisson.cmn/" target="_blank">Instagram</a>
-    </div>
-    <div>
-        <p class="text content__title">Location</p>
-        <p class="text">Strasbourg, France</p>
-    </div>
+    {% if data.theme.footer.footer_email_contact %}
+        <div>
+            <p class="text content__title">Get in touch</p>
+            <a class="text" href="mailto:{{ data.theme.footer.footer_email_contact }}">{{ data.theme.footer.footer_email_contact }}</a>
+        </div>
+    {% endif %}
+    {% if data.theme.footer.footer_social_links %}
+        <div>
+            <p class="text content__title">Social</p>
+
+            {% for social in data.theme.footer.footer_social_links %}
+                <a class="text" href="{{ social.link }}" target="_blank">{{ social.text }}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if data.theme.footer.footer_location %}
+        <div>
+            <p class="text content__title">Location</p>
+            <p class="text">{{ data.theme.footer.footer_location }}</p>
+        </div>
+    {% endif %}
 </div>
 <div class="footer-grid footer__second_part">
     <div>
         <p class="text">© 2022</p>
     </div>
     <div>
-        <p class="text">Built and designed <br />by Alec Teihotaata</p>
+        <p class="text">Built and designed <br />by <a href="https://www.alecteihotaata.com" class="text no-block" target="_blank">Alec Teihotaata</a></p>
     </div>
+    {% if data.theme.footer.footer_cv %}
+        <div>
+            <a href="{{ data.theme.footer.footer_cv }}" class="btn" target="_blank">Voir le CV</a>
+        </div>
+    {% endif %}
 </div>
 <div class="footer-end-text__container">
     <p class="footer-end-text">Hello</p>

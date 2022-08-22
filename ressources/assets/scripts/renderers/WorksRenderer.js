@@ -66,7 +66,8 @@ class WorksRenderer extends Highway.Renderer {
     const imageContainer = document.querySelector(
       ".page-works__images-container"
     );
-    const images = [...imageContainer.querySelectorAll("img")];
+    const images = [...imageContainer.querySelectorAll(".image-container")];
+    console.log(images);
 
     new TravauxImageParallax(imageContainer, images, works);
 

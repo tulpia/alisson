@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Utils\TwigFilters;
+use App\Utils\ACFCustomFields;
 use Timber\Timber;
 
 class App
@@ -38,6 +39,7 @@ class App
     public function loadUtils()
     {
         TwigFilters::getInstance();
+        ACFCustomFields::getInstance();
     }
 
     public function includeAssets()
